@@ -1,0 +1,4 @@
+[submodule "lib/jacktrip-teensy"]
+	path = lib/jacktrip-teensy
+	url = https://github.com/hatchjaw/jacktrip-teensy
+	branch = feature/libraryise
