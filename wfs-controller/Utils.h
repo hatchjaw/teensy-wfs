@@ -1,0 +1,28 @@
+//
+// Created by tar on 26/11/22.
+//
+
+#ifndef JACKTRIP_TEENSY_UTILS_H
+#define JACKTRIP_TEENSY_UTILS_H
+
+#ifndef AUDIO_BLOCK_SAMPLES
+#define AUDIO_BLOCK_SAMPLES 64
+#endif
+
+#ifndef NUM_JACKTRIP_CHANNELS
+#define NUM_JACKTRIP_CHANNELS 2
+#endif
+
+#ifndef NUM_AUDIO_SOURCES
+#define NUM_AUDIO_SOURCES 2
+#endif
+
+#ifndef NUM_SPEAKERS
+#define NUM_SPEAKERS 16
+#endif
+
+#ifndef SPEAKERS_PER_MODULE
+#define SPEAKERS_PER_MODULE 2
+#endif
+
+#endif //JACKTRIP_TEENSY_UTILS_H
