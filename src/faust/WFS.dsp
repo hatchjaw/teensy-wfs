@@ -60,9 +60,11 @@ with{
     // Use normalised input co-ordinate space; scale to dimensions.
 
     // X position lies on the width of the speaker array
-    x(p) = hslider("%p/x", 0, 0, 1, 0.001) : si.smoo : *(SPEAKER_DIST*N_SPEAKERS);
+    // x(p) = hslider("%p/x", 0, 0, 1, 0.001) : si.smoo : *(SPEAKER_DIST*N_SPEAKERS);
+    x(p) = hslider("%p/x", 0, 0, 1, 0.001) : *(SPEAKER_DIST*N_SPEAKERS);
     // Y position is from zero (on the array) to a quasi-arbitrary maximum.
-    y(p) = hslider("%p/y", 0, 0, 1, 0.001) : si.smoo : *(MAX_Y_DIST);
+    // y(p) = hslider("%p/y", 0, 0, 1, 0.001) : si.smoo : *(MAX_Y_DIST);
+    y(p) = hslider("%p/y", 0, 0, 1, 0.001) : *(MAX_Y_DIST);
 };
 
 // Distribute input channels (i.e. sources) across the sources array.
