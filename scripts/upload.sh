@@ -1,8 +1,7 @@
 #!/bin/bash
 
 if ! command -v tycmd &>/dev/null; then
-  echo "Error: requires tytools, which were not found https://github.com/Koromix/tytools" >&2
-  echo
+  echo -e "Error: requires tytools, which were not found https://github.com/Koromix/tytools\n" >&2
   exit 1
 fi
 
