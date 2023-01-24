@@ -48,4 +48,5 @@ cmake-build-*
 
 ### PlatformIO
 .pio
+/CMakeLists.txt
 CMakeListsPrivate.txt
