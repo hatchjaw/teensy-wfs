@@ -7,7 +7,7 @@
 #include <JuceHeader.h>
 #include "XYController.h"
 #include "JackConnector.h"
-#include "MultiChannelAudioSource.h"
+#include "succulent/MultiChannelAudioSource/MultiChannelAudioSource.h"
 #include "Utils.h"
 
 

@@ -26,7 +26,8 @@ with{
 // i.e. give each source a distance simulation and a delay
 // relative to each speaker.
 speakerArray(x, y) = _ <:
-    par(i, SPEAKERS_PER_MODULE, distanceSim(hypotenuse(i)) : de.fdelay(MAX_DELAY, smallDelay(i)))
+    par(i, SPEAKERS_PER_MODULE, distanceSim(hypotenuse(i)) : 
+    de.fdelay2(MAX_DELAY, smallDelay(i)))
 with{
     // y (front-to-back) is always just y, the longitudinal
     // distance of the source from the array.
@@ -61,6 +62,7 @@ with{
 
     // X position lies on the width of the speaker array
     // x(p) = hslider("%p/x", 0, 0, 1, 0.001) : si.smoo : *(SPEAKER_DIST*N_SPEAKERS);
+    // TODO: smooth the incoming OSC data on Teensy instead
     x(p) = hslider("%p/x", 0, 0, 1, 0.001) : *(SPEAKER_DIST*N_SPEAKERS);
     // Y position is from zero (on the array) to a quasi-arbitrary maximum.
     // y(p) = hslider("%p/y", 0, 0, 1, 0.001) : si.smoo : *(MAX_Y_DIST);

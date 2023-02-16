@@ -50,3 +50,5 @@ cmake-build-*
 .pio
 /CMakeLists.txt
 CMakeListsPrivate.txt
+
+.vscode

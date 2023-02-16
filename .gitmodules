@@ -2,3 +2,6 @@
 	path = lib/jacktrip-teensy
 	url = https://github.com/hatchjaw/jacktrip-teensy
 	branch = main
+[submodule "wfs-controller/succulent"]
+	path = wfs-controller/succulent
+	url = https://github.com/hatchjaw/succulent

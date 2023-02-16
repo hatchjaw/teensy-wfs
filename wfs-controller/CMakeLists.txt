@@ -66,7 +66,7 @@ target_sources(WfsController
         WFSMessenger.cpp
         XYController.cpp
         JackConnector.cpp
-        MultiChannelAudioSource.cpp)
+        succulent/MultiChannelAudioSource/MultiChannelAudioSource.cpp)
 
 # `target_compile_definitions` adds some preprocessor definitions to our target. In a Projucer
 # project, these might be passed in the 'Preprocessor Definitions' field. JUCE modules also make use
@@ -132,3 +132,11 @@ add_compile_definitions(
         NUM_SPEAKERS=${NUM_SPEAKERS}
         SPEAKERS_PER_MODULE=${SPEAKERS_PER_MODULE}
 )
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    # Sign targets to allow debugging without elevated privileges
+    add_custom_command(TARGET WfsController
+            POST_BUILD
+            COMMAND /bin/sh ${PROJECT_SOURCE_DIR}/succulent/scripts/add_debug_entitlement.sh
+            ${PROJECT_BINARY_DIR}/WfsController_artefacts/${CMAKE_BUILD_TYPE}/WFS\ Controller.app)
+endif ()
