@@ -50,3 +50,9 @@ cmake-build-*
 .pio
 /CMakeLists.txt
 CMakeListsPrivate.txt
+
+### IDE
+.idea
+
+### Faust libs
+!/src/faust/**/*.lib
