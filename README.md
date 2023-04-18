@@ -31,7 +31,8 @@ on your JackTrip server.
 
 The above flags are set in [platformio.ini](platformio.ini).
 
-To build and upload to a Teensy:
+To pull dependencies (_TeensyID_, for assigning a MAC and IP),
+build and upload to a Teensy:
 
 ```shell
 pio run -t upload
