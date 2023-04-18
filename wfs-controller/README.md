@@ -47,7 +47,7 @@ the dropdown menus at the bottom.
 On launch, the app will attempt to query JACK for any JackTrip clients, which
 it identifies by the pattern of the device name they're assigned by JackTrip
 when they make contact with the server, i.e. `__ffff_[IPv4 address]`. The
-IP address part of the device names is extracted and used to populate the 
+IPv4 part of the device names is extracted and used to populate the 
 dropdown lists. (Yes, _any_ JackTrip client found will make its way into the 
 dropdowns.) Select IPs according to the positions of your modules. Click
 **Refresh Ports** to rescan and update the lists.

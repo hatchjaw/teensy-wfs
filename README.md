@@ -9,6 +9,21 @@ for Teensy, which is a submodule at [lib/jacktrip-teensy](lib/jacktrip-teensy).
 
 ## Building
 
+### Faust
+
+DSP is handled by a Faust algorithm. Consult the parameters in
+[src/faust/WFS_Params.lib](src/faust/WFS_Params.lib), set them to match your
+system, and run the following command:
+
+```shell
+./scripts/f2t ./src/faust/WFS.dsp
+```
+
+This will compile `WFS.dsp` to a Teensy audio library C++ class, which will be 
+placed in `src/WFS`.
+
+### Teensy
+
 Define `AUDIO_BLOCK_SAMPLES` and `NUM_JACKTRIP_CHANNELS` to match the settings
 on your JackTrip server. 
 
