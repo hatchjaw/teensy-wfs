@@ -49,8 +49,9 @@ You can define `NUM_JACKTRIP_CHANNELS` in `src/main.cpp`, but not (as far as
 I'm aware) `AUDIO_BLOCK_SAMPLES`; you may need to make a
 `platform.local.txt` for your Arduino environment to set that flag.
 
-Anyway, copy `src/main.cpp` into a `.ino` sketch, and add `src/WFS/*` to that
-sketch. Download a .zip of the `jacktrip-teensy` repository, and import that 
+Anyway, create a sketch, copy `src/main.cpp` into the `.ino` file, and add 
+`src/WFS/*` to that sketch. Open the library manager and add the _TeensyID_ 
+library. Download a .zip of the `jacktrip-teensy` repository, and import that 
 into the IDE (Sketch > Include Library > Add .ZIP Library...). Select Teensy 
 4.1 as your board and click _Upload_.
 
