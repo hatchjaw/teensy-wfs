@@ -79,7 +79,7 @@ the `jacktrip-teensy` repository.
 
 ---
 
-## WFS Control Application
+## WFS Controller Application
 
 There is a WFS Controller JUCE app in the [wfs-controller](wfs-controller)
 directory; head there for build instructions. 
