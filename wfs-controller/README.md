@@ -1,6 +1,6 @@
 # WFS Controller
 
-Requires cmake and JUCE.
+Requires cmake and JUCE (v7.0.5).
 
 ## JUCE
 
