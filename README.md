@@ -11,9 +11,13 @@ for Teensy, which is a submodule at [lib/jacktrip-teensy](lib/jacktrip-teensy).
 
 ### Faust
 
-DSP is handled by a Faust algorithm. Consult the parameters in
-[src/faust/WFS_Params.lib](src/faust/WFS_Params.lib), set them to match your
-system, and run the following command:
+DSP is handled by a Faust algorithm, which must be compiled for the Teensy
+audio library. Consult the parameters in
+[src/faust/WFS_Params.lib](src/faust/WFS_Params.lib) and set them to match your
+system. Compilation requires the `faust2teensy` utility, which is installed with
+the Faust compiler. Install Faust as per the
+[instructions](https://github.com/grame-cncm/faust/wiki/BuildingSimple), then
+issue the following command:
 
 ```shell
 ./scripts/f2t ./src/faust/WFS.dsp
