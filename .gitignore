@@ -53,6 +53,7 @@ CMakeListsPrivate.txt
 
 ### IDE
 .idea
+.vscode
 
 ### Faust libs
 !/src/faust/**/*.lib
