@@ -1,10 +1,31 @@
 # WFS Controller
 
-Requires cmake and JUCE (v7.0.5).
+Requires cmake and JUCE.
+
+Developed with JUCE v7.0.5; builds with JUCE at least as far back as v6.1.6.
+
+| OS       | Builds | Runs |
+|----------|:------:|:----:|
+| Linux    |   ✅    |  ✅   |
+| Mac OS X |   ✅    |  ❗*  |
+| Windows  |   ❔    |  ❔   |
+
+&ast; Relies on the availability at runtime of 
+[JACK](https://jackaudio.org) as an audio host/output device. 
+Although it's possible to install JACK on Mac OS X, JackRouter,
+the bridge from JACK to Core Audio, hasn't worked since 
+OS X 10.12 (see 
+[here](https://github.com/jackaudio/jack2/issues/618) and various
+other issues in the jack2 repository.)
+
+The app uses the JACK API to make connections between itself and 
+any available JackTrip clients, but this is contingent on 
+establishing the app itself as a device in the JACK graph; 
+via JUCE on OS X, this is not possible.
 
 ## JUCE
 
-We will be using JUCE's cmake API. Kindly consult the
+The build is configured via JUCE's cmake API. Kindly consult the
 [Getting Started](https://github.com/juce-framework/JUCE/blob/master/docs/CMake%20API.md#getting-started) 
 section of JUCE's cmake documentation.
 
@@ -27,8 +48,9 @@ add_subdirectory(JUCE)                    # If you've put JUCE in a subdirectory
 Configure:
 
 ```shell
-cmake -DCMAKE_BUILD_TYPE=(Debug|Release) -DJUCE_INSTALL_PATH=/path/to/juce -B ./build-dir
+cmake -DCMAKE_BUILD_TYPE=Debug -DJUCE_INSTALL_PATH=/path/to/juce -B ./build-dir
 ```
+Set `-DCMAKE_BUILD_TYPE` to `Release` for a release-optimised build.
 
 Then build:
 

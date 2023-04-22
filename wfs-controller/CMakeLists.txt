@@ -38,13 +38,15 @@ find_package(JUCE CONFIG REQUIRED)        # If you've installed JUCE to your sys
 # up by default. This function accepts many optional arguments. Check the readme at
 # `docs/CMake API.md` in the JUCE repo for the full list.
 
+set(PRODUCT_NAME "WFS Controller")
+
 juce_add_gui_app(WfsController
         # VERSION ...                       # Set this if the app version is different to the project version
         # ICON_BIG ...                      # ICON_* arguments specify a path to an image file to use as an icon
         # ICON_SMALL ...
         # DOCUMENT_EXTENSIONS ...           # Specify file extensions that should be associated with this app
         # COMPANY_NAME ...                  # Specify the name of the app's author
-        PRODUCT_NAME "WFS Controller")     # The name of the final executable, which can differ from the target name
+        PRODUCT_NAME ${PRODUCT_NAME})     # The name of the final executable, which can differ from the target name
 
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
 # into your build tree. This should be included with `#include <JuceHeader.h>`. The include path for
@@ -132,3 +134,11 @@ add_compile_definitions(
         NUM_SPEAKERS=${NUM_SPEAKERS}
         SPEAKERS_PER_MODULE=${SPEAKERS_PER_MODULE}
 )
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    # Sign targets to allow debugging without elevated privileges
+    add_custom_command(TARGET WfsController
+            POST_BUILD
+            COMMAND /bin/sh ${PROJECT_SOURCE_DIR}/succulent/scripts/add_debug_entitlement.sh
+            ${PROJECT_BINARY_DIR}/WfsController_artefacts/${CMAKE_BUILD_TYPE}/${PRODUCT_NAME}.app)
+endif ()
